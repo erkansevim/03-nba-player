@@ -15,7 +15,7 @@ const CardContainer = () => {
      <Form.Control className="w-50 m-auto" type="search" placeholder="Search Player..." onChange={(e)=>setArama(e.target.value)}/>
         <Container className='kart-container rounded-4 my-4 p-3'>
             <Row className='g-3 justify-content-center'>
-                {data.filter((abc)=>abc.name.includes(arama)).map((player)=>(
+                {data.filter((abc)=>abc.name.toLowerCase().includes(arama.toLowerCase())).map((player)=>(
                    
                     <Col md={6} lg={4} xl={3} key={player.name}>
                         <Player {...player}/>
